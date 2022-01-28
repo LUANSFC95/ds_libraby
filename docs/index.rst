@@ -10,7 +10,9 @@ Welcome to viadstools's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-   srt.modules
+   Statistical Metrics <stats_metrics>
+
+
 
 Indices and tables
 ==================

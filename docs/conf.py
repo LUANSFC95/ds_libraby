@@ -12,10 +12,11 @@
 #
 import os
 import sys
-sys.path.insert(0, os.path.abspath('.'))
-for x in os.walk('../src'):
-  sys.path.insert(0, x[0])
+from pathlib import Path
 
+CURR_PATH = Path(__file__).absolute().parent
+LIB_PATH = CURR_PATH.parent / 'src/ds_library'
+sys.path.insert(0, str(LIB_PATH))
 
 # -- Project information -----------------------------------------------------
 
@@ -35,7 +36,8 @@ extensions = ['sphinx.ext.todo',
               'sphinx.ext.doctest',
               'sphinx.ext.intersphinx',
               'sphinx.ext.mathjax',
-              'sphinx.ext.napoleon'
+              'sphinx.ext.napoleon',
+              'sphinx.ext.autosummary'
             ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -60,7 +62,9 @@ html_theme = 'sphinx_rtd_theme'
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
-autodoc_default_options = {"members": True, "inherited-members": True}
+autodoc_default_flags = ['members', 'inherited-members', 'show-inheritance']
+
+autodoc_default_options = {"members": True, "inherited-members": True, "show-inheritance": True}
 
 # Only the class' docstring is inserted.
 autoclass_content = 'class'
@@ -77,3 +81,5 @@ html_theme_options = {
     'includehidden': False,
     'logo_only': True,
 }
+
+autosummary_generate = ['stats_metrics.rst']
