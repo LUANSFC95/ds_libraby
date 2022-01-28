@@ -42,5 +42,5 @@ class Operations:
             
         """
 
-        return (float(self.number_1*self.number_2))
+        return (float(self.number_1/self.number_2))
     
