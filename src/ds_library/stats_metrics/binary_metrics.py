@@ -4,11 +4,11 @@ class Operations:
     
     Esta classe reune as seguintes operações entre dois inteiros: adição, multiplicação, subtração e divisão"""
 
-    def __init__(self, **kwargs):
+    def __init__(self, number_1, number_2):
         """Inits Class"""
 
-        self.number_1 = kwargs.get('number_1')
-        self.number_2 = kwargs.get('number_2')
+        self.number_1 = number_1
+        self.number_2 = number_2
 
 
 
